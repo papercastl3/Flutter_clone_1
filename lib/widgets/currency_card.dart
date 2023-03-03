@@ -22,7 +22,7 @@ class CurrencyCard extends StatelessWidget {
     return Transform.translate(
       offset: index == 1
           ? const Offset(0, 0)
-          : Offset(0, index * -20), //first index=1
+          : Offset(0, (index - 1) * -20), //first index=1
       child: Container(
         clipBehavior: Clip.hardEdge, //(로고)밖에 나간거 안보이게 함
         decoration: BoxDecoration(
