@@ -4,7 +4,7 @@ class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
   final IconData icon;
   final bool isInverted;
-  final double index;
+  final double order;
 
   final _blackColor = const Color(0xFF1F2123); //앞에 _는 private하게 쓰겠다는 거임
   const CurrencyCard({
@@ -14,15 +14,15 @@ class CurrencyCard extends StatelessWidget {
     required this.amount,
     required this.icon,
     required this.isInverted,
-    required this.index,
+    required this.order,
   });
 
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: index == 1
+      offset: order == 1
           ? const Offset(0, 0)
-          : Offset(0, (index - 1) * -20), //first index=1
+          : Offset(0, (order - 1) * -20), //first index=1
       child: Container(
         clipBehavior: Clip.hardEdge, //(로고)밖에 나간거 안보이게 함
         decoration: BoxDecoration(
